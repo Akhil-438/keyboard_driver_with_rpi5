@@ -182,4 +182,4 @@ module_usb_driver(usb_kbd_driver);
 
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("Custom USB Keyboard Driver");
-MODULE_AUTHOR("Bhanu + ChatGPT");
+MODULE_AUTHOR("Kakarla Akhilesh");
