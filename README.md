@@ -1,5 +1,4 @@
-```markdown
-# USB Keyboard Driver for Raspberry Pi (Linux Kernel 6.x)
+## USB Keyboard Driver for Raspberry Pi (Linux Kernel 6.x)
 
 This project implements a **custom USB keyboard driver** for Raspberry Pi 5 running Linux 6.x.  
 It is a learning-oriented kernel module that demonstrates how to handle USB HID devices, register with the Linux input subsystem, and provide basic keyboard functionality.
@@ -14,41 +13,16 @@ It is a learning-oriented kernel module that demonstrates how to handle USB HID 
 - Provides manual **bind/unbind** for testing with a physical keyboard.
 - Educational example for **Linux Device Driver (LDD)** development.
 
----
 
-## 📊 Architecture
-
-```
-
-USB Keyboard
-│
-▼
-+-------------------+
-\|   usbkbd driver   |
-\| (custom kernel mod)|
-+-------------------+
-│
-▼
-+-------------------+
-\| Linux Input Subsys|
-\| (/dev/input/eventX)|
-+-------------------+
-│
-▼
-Applications
-(e.g., Shell, TTY)
-
-```
 
 If you want a visual diagram, here’s a suggested flow:
 
-```
 
 \[USB Keyboard] → \[usbkbd.ko] → \[Linux Input Subsystem] → \[User Space / Terminal]
 
-````
 
----
+
+<img width="1024" height="1536" alt="ChatGPT Image Sep 3, 2025, 11_16_22 AM" src="https://github.com/user-attachments/assets/9b0ca615-e45e-4451-a507-5b6c71106636" />
 
 ## ⚙️ Requirements
 - Raspberry Pi 5 (or other ARM64 board)  
@@ -57,12 +31,11 @@ If you want a visual diagram, here’s a suggested flow:
 - Basic knowledge of kernel module compilation  
 
 Install kernel headers:
+
 ```bash
 sudo apt update
 sudo apt install raspberrypi-kernel-headers build-essential
-````
-
----
+```
 
 ## 🔨 Build
 
@@ -154,6 +127,3 @@ MIT License
 ```markdown
 ![Driver Architecture](docs/driver_arch.png)
 ````
-
-Do you want me to generate that diagram image for you?
-
