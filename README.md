@@ -5,7 +5,7 @@ It is a learning-oriented kernel module that demonstrates how to handle USB HID 
 
 ---
 
-## ✨ Features
+## Features
 - Implements **USB HID Boot Protocol keyboard driver**.
 - Logs **key press events** via `dmesg`.
 - Registers with the **Linux input subsystem** (`/dev/input/event*`).
@@ -20,11 +20,11 @@ If you want a visual diagram, here’s a suggested flow:
 
 \[USB Keyboard] → \[usbkbd.ko] → \[Linux Input Subsystem] → \[User Space / Terminal]
 
+## Architecture
 
+<img width="256" height="384" alt="ChatGPT Image Sep 3, 2025, 11_16_22 AM" src="https://github.com/user-attachments/assets/9b0ca615-e45e-4451-a507-5b6c71106636" />
 
-<img width="1024" height="1536" alt="ChatGPT Image Sep 3, 2025, 11_16_22 AM" src="https://github.com/user-attachments/assets/9b0ca615-e45e-4451-a507-5b6c71106636" />
-
-## ⚙️ Requirements
+## Requirements
 - Raspberry Pi 5 (or other ARM64 board)  
 - Linux Kernel `6.12.x` (with headers installed)  
 - USB keyboard for testing  
@@ -37,7 +37,7 @@ sudo apt update
 sudo apt install raspberrypi-kernel-headers build-essential
 ```
 
-## 🔨 Build
+## Build
 
 Clone the repo and build:
 
@@ -53,7 +53,7 @@ make clean
 
 ---
 
-## ▶️ Usage
+## Usage
 
 1. **Insert the driver**:
 
@@ -95,7 +95,7 @@ dmesg -w
 
 ---
 
-## 🛑 Recovery (if input stops working)
+## Recovery (if input stops working)
 
 If your keyboard stops responding:
 
@@ -106,7 +106,7 @@ echo -n "3-1:1.0" | sudo tee /sys/bus/usb/drivers/usbhid/bind
 
 ---
 
-## 📚 Notes
+## Notes
 
 * This driver is **for educational purposes only**.
 * It is **not a full replacement** for the production `usbhid` driver.
@@ -114,16 +114,6 @@ echo -n "3-1:1.0" | sudo tee /sys/bus/usb/drivers/usbhid/bind
 
 ---
 
-## 📜 License
+## License
 
 MIT License
-
-````
-
----
-
-👉 I can also generate a **PNG diagram** (nice, professional block diagram) that you can upload to your repo (`docs/driver_arch.png`) and reference in the README like:
-
-```markdown
-![Driver Architecture](docs/driver_arch.png)
-````
